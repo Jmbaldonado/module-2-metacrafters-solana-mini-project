@@ -5,23 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="21e7002d-d343-4ce7-a186-0325d8aa8ee5" name="Changes" comment="Initial Commit">
-      <change afterPath="$PROJECT_DIR$/server/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/controllers/api.controller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/routes/apiRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/base-x/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/base-x/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/base-x/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/base-x/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/base-x/src/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/base-x/src/index.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/base-x/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/base-x/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/bs58/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bs58/CHANGELOG.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/bs58/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bs58/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/bs58/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bs58/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/node_modules/bs58/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/node_modules/bs58/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +81,29 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial Commit" />
