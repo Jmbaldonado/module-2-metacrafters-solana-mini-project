@@ -16,6 +16,8 @@ function App() {
   const [provider, setProvider] = useState(undefined);
   const [walletKey, setWalletKey] = useState(undefined);
   const [fromWallet, setFromWallet] = useState(undefined);
+  const [fromWalletBalance, setFromWalletBalance] = useState(0);
+  const [toWalletBalance, setToWalletBalance] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -25,15 +27,35 @@ function App() {
     else setProvider(undefined);
   }, []);
 
+  const createWallet = async () => {
+    try {
+      setIsLoading(true);
+      const { data } = await axios.post("http://localhost:4000/api/generate");
+      setFromWallet(data.keypair);
+      setFromWalletBalance(data.balance);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const connectWallet = async () => {
     const { solana } = window;
 
     if (solana) {
       try {
+        setIsLoading(true);
         const response = await solana.connect();
-        setWalletKey(response.publicKey.toString());
+        setWalletKey(response);
+
+        const { data } = await axios.post("http://localhost:4000/api/balance", {
+          publicKey: response.publicKey,
+        });
+
+        setToWalletBalance(data.balance);
       } catch (err) {
         console.warn(err);
+      } finally {
+        setIsLoading(false);
       }
     }
   };
@@ -51,14 +73,22 @@ function App() {
     }
   };
 
-  const createWallet = async () => {
+  const transferSol = async () => {
     try {
       setIsLoading(true);
-      const { data } = await axios.post("http://localhost:4000/api/generate");
-      const {
-        _keypair: { publicKey },
-      } = data;
-      setFromWallet(publicKey);
+
+      const { data } = await axios.post("http://localhost:4000/api/transfer", {
+        from: fromWallet,
+        to: walletKey,
+        amount: fromWalletBalance,
+      });
+
+      if (data.signature) {
+        const { data } = await axios.post("http://localhost:4000/api/balance", {
+          publicKey: walletKey.publicKey,
+        });
+        setToWalletBalance(data.balance);
+      }
     } finally {
       setIsLoading(false);
     }
@@ -94,7 +124,12 @@ function App() {
               <span className={"text-primary uppercase bold subtitle"}>
                 Wallet Address:
               </span>
-              {walletKey}
+              {walletKey.publicKey.toString()}
+
+              <span className={"text-primary uppercase bold subtitle"}>
+                Wallet Balance:
+              </span>
+              {toWalletBalance}
             </>
             <div className={"button__container"}>
               <button
@@ -105,7 +140,11 @@ function App() {
                 Disconnect Wallet
               </button>
 
-              <button className={"button button--primary"} type={"button"}>
+              <button
+                className={"button button--primary"}
+                onClick={transferSol}
+                type={"button"}
+              >
                 Transfer Sol
               </button>
             </div>
