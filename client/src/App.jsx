@@ -145,7 +145,7 @@ function App() {
                 onClick={transferSol}
                 type={"button"}
               >
-                Transfer Sol
+                Transfer to new wallet
               </button>
             </div>
           </>
